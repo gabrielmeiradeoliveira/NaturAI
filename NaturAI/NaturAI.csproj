@@ -1,0 +1,63 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>f830f881-f1a3-4d1e-9ec0-43b5f6f98101</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Db\Migrations\V1__startup.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+		<PackageReference Include="Dapper" Version="2.1.66" />
+		<PackageReference Include="dbup" Version="5.0.41" />
+		<PackageReference Include="Evolve" Version="3.2.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.15" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.3.0" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+		<PackageReference Include="Npgsql" Version="9.0.3" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="8.1.1" />
+		<PackageReference Include="xunit" Version="2.9.3" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="Db\Migrations\V2__insert_startup.sql" />
+		<EmbeddedResource Include="Db\Migrations\V1__startup.sql" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="readme.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>README.md</DependentUpon>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="README.md">
+	    <Generator>TextTemplatingFileGenerator</Generator>
+	    <LastGenOutput>readme.cs</LastGenOutput>
+	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="readme.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>README.md</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+</Project>

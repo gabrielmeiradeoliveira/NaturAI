@@ -1,0 +1,43 @@
+﻿namespace NaturAI.Model.Enum
+{
+    public enum TipoTreinoEnum
+    {
+        Musculação = 1,
+        Força = 2,
+        Resistência = 3,
+        Funcional = 4,
+        Hipertrofia = 5,
+        Pliométrico = 6,
+        Potência = 7,
+        PesoCorporal = 8,
+        CrossFit = 9,
+        Kettlebell = 10,
+        Halteres = 11,
+        Barra = 12,
+        IsolamentoMuscular = 13,
+        Agilidade = 14,
+        Velocidade = 15,
+        Core = 16,
+        Mobilidade = 17,
+        Recuperação = 18,
+        Flexibilidade = 19,
+        Estabilidade = 20,
+        ResistenciaMuscular = 21,
+        Prehab = 22,
+        Reabilitação = 23,
+        Circuito = 24,
+        SuperSets = 25,
+        DropSet = 26,
+        RestPause = 27,
+        ForçaExplosiva = 28,
+        ForçaMáxima = 29,
+        EnduranceMuscular = 30,
+        ForçaFuncional = 31,
+        PeitoTriceps = 32,
+        CostasBiceps = 33,
+        OmbrosTrapezio = 34,
+        Pernas = 35,
+        GluteosQuadriceps = 36,
+        Panturrilhas = 37
+    }
+}

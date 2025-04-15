@@ -1,0 +1,33 @@
+﻿version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "5000:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - naturai-network
+
+  db:
+    image: postgres:15
+    restart: always
+    environment:
+      POSTGRES_DB: naturai
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - naturai-network
+
+networks:
+  naturai-network:
+
+volumes:
+  postgres_data:

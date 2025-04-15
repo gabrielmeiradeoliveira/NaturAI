@@ -1,0 +1,6 @@
+@NaturAI_HostAddress = http://localhost:5172
+
+GET {{NaturAI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
